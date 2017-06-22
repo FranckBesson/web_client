@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta charset="utf-8"/>
+	<title>Page</title>
+	<link rel="stylesheet" type="text/css" href="index_htlm.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+	<fieldset class="topBox">
+		<legend>Add to server</legend>
+		<div class="top">
+			<div id="info">
+				Information <input type="text" name="" id="information">
+			</div>
+		</div>
+		<button id="send">Send to the server</button>
+	</fieldset>
+	<fieldset class="buttomBox">
+		<legend>Receiving</legend>
+		<button id="get">Get from server</button>
+		<p id="get_server"></p>
+		<div id="info">
+			Sever say :<span id="server" style="border:1px solid black;"></span>
+		</div>
+	</fieldset>
+	<script type="text/javascript">
+		var domain = 'https://webservicelemonade.herokuapp.com'
+		$("#get_server").click(function(){
+			
+			$.ajax(domain).then(function(text){
+				$("#get").text(text);
+			});
+		});
+
+		$("#send").click(function(){
+			Information = $("#information").val();
+			data = {"information" : Information}
+			str = JSON.stringify(data)
+			$("#information").val("");
+			$.ajax({
+  				type: "POST",
+				url: "https://webservicelemonade.herokuapp.com",
+  				data: str,
+  				dataType: 'json'
+			});
+		});
+		
+	</script>
+
+</body>
+
+</html>
