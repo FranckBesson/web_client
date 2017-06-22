@@ -1,0 +1,32 @@
+button{
+size: 10px;
+}
+.topBox{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+border-color: black;
+border-style: solid;
+margin: 0em;
+margin-bottom: 2em;
+padding: 1em;
+}
+
+.buttomBox{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+border-color: black;
+border-style: solid;
+margin: 0em;
+margin-top: 0em;
+padding: 1em;
+}
+
+.top{
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+margin-bottom: 4em
+}
