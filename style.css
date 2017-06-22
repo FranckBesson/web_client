@@ -18,16 +18,11 @@
   height: 100px;
 }
 
-.idbox{
-  display: block;
-  border-width: thin;
-  border-style: solid;
-  border-color: black;
-  height: 80px;
-  width: 300px ;
-  margin-left: auto ;
-  margin-right: auto;
-}
+/*.sectionUno{
+  display: flex;
+  justify-content: center;
+  align-items: baseline; s
+}*/
 
 .settings {
   display: block;
@@ -41,13 +36,36 @@
 
 }
 
-.sectionDos {
+/*.order{
   display: block;
   border-width: thin;
   border-style: solid;
   border-color: black;
-  height: 220px;
-  width: 149px ;
-  margin-top: 30px;
-  margin-left: 200px;
+  height: 700px;
+  width: 143px ;
+  margin-top: 20px;
+  padding-left: 16px;
+}*/
+
+.forecast {
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-color: black;
+  height: 270px;
+  width: 143px ;
+  margin-top: 20px;
+  padding-left: 16px;
+}
+
+.forecast img {
+  max-width: 40%;
+  display: block;
+  margin: auto;
+  padding-right: 16px;
+}
+
+.forecast p{
+  text-align: center;
+  padding-right: 16px;
 }
