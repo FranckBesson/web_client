@@ -1,4 +1,11 @@
-alert(localStorage.getItem("test"));
+alert(localStorage.getItem("test");
+cash = localStorage.getItem("cash");
+sales = localStorage.getItem("sales");
+profit = localStorage.getItem("profit");
+drinkOffered = localStorage.getItem("drinkOffered");
+name = localStorage.getItem("name");
+latitude = localStorage.getItem("latitude");
+longitude = localStorage.getItem("longitude");
 $("#cash").text(cash);
 $("#sales").text(sales);
 $("#profit").text(profit);
