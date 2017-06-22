@@ -15,37 +15,52 @@
   margin-left: auto ;
   margin-right: auto;
   width: 200px;
-  height: 100px;
+  height: 20px;
 }
 
-/*.sectionUno{
+.sectionUno{
   display: flex;
-  justify-content: center;
-  align-items: baseline; s
-}*/
+  //justify-content: center;
+  //align-items: baseline; s
+}
 
 .settings {
   display: block;
   border-width: thin;
   border-style: solid;
   border-color: black;
-  height: 265px;
-  width: 143px ;
+  height: auto;
+  width: auto ;
   margin-top: 20px;
   padding-left: 16px;
+  padding-right: 10px;
 
 }
 
-/*.order{
+.order{
   display: block;
   border-width: thin;
   border-style: solid;
   border-color: black;
-  height: 700px;
-  width: 143px ;
+  height: auto;
+  width: auto  ;
   margin-top: 20px;
-  padding-left: 16px;
-}*/
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.order table{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.order th, td{
+  padding: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 
 .forecast {
   display: block;
