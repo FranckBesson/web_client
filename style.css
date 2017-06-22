@@ -29,11 +29,25 @@
   margin-right: auto;
 }
 
-.sectionUno {
+.settings {
   display: block;
   border-width: thin;
   border-style: solid;
   border-color: black;
-  height: 185px;
+  height: 265px;
+  width: 143px ;
+  margin-top: 20px;
+  padding-left: 16px;
+
+}
+
+.sectionDos {
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-color: black;
+  height: 220px;
   width: 149px ;
+  margin-top: 30px;
+  margin-left: 200px;
 }
