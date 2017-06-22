@@ -18,16 +18,11 @@
   height: 100px;
 }
 
-.idbox{
-  display: block;
-  border-width: thin;
-  border-style: solid;
-  border-color: black;
-  height: 80px;
-  width: 300px ;
-  margin-left: auto ;
-  margin-right: auto;
-}
+/*.sectionUno{
+  display: flex;
+  justify-content: center;
+  align-items: baseline; s
+}*/
 
 .settings {
   display: block;
@@ -40,6 +35,17 @@
   padding-left: 16px;
 
 }
+
+/*.order{
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-color: black;
+  height: 700px;
+  width: 143px ;
+  margin-top: 20px;
+  padding-left: 16px;
+}*/
 
 .forecast {
   display: block;
