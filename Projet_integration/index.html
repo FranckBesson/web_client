@@ -26,8 +26,8 @@
 		</div>
 	</fieldset>
 	<script type="text/javascript">
-		var domain = "https://webserverlemonade.herokuapp.com"
-		$("#get_server").click(function(){
+		var domain = "http://webserverlemonade.herokuapp.com"
+		$("#get").click(function(){
 			
 			$.ajax(domain+"/metrology").then(function(text){
 				console.log(text)
@@ -39,12 +39,13 @@
 			Information = $("#information").val();
 			data = {"information" : Information}
 			str = JSON.stringify(data)
-			$("#information").val("");
+			$("#information").val("info");
+			console.log(str)
 			$.ajax({
   				type: "POST",
 				url: domain+"/sales",
   				data: str,
-  				dataType: 'json'
+  				contentType: 'application/json'
 			})
 			.done(function(e) {
   				console.log(e)
