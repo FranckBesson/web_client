@@ -1,3 +1,4 @@
+alert(localStorage.getItem("test"));
 $("#cash").text(cash);
 $("#sales").text(sales);
 $("#profit").text(profit);
