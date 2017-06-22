@@ -2,7 +2,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<meta charset="utf-8"/>
 	<title>Page</title>
-	<link rel="stylesheet" type="text/css" href="index_htlm.css">
+	<link rel="stylesheet" type="text/css" href="index_html.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
@@ -19,16 +19,19 @@
 		<legend>Receiving</legend>
 		<button id="get">Get from server</button>
 		<p id="get_server"></p>
-		<div id="info">
-			Sever say :<span id="server" style="border:1px solid black;"></span>
+		<div class = "top">
+			<div id="info">
+				Sever say :<span id="server" style="border:1px solid black;"></span>
+			</div>
 		</div>
 	</fieldset>
 	<script type="text/javascript">
-		var domain = 'https://webservicelemonade.herokuapp.com'
+		var domain = "https://webserverlemonade.herokuapp.com"
 		$("#get_server").click(function(){
 			
-			$.ajax(domain).then(function(text){
-				$("#get").text(text);
+			$.ajax(domain+"/metrology").then(function(text){
+				console.log(text)
+				$("#get_server").val(text);
 			});
 		});
 
@@ -39,9 +42,15 @@
 			$("#information").val("");
 			$.ajax({
   				type: "POST",
-				url: "https://webservicelemonade.herokuapp.com",
+				url: domain+"/sales",
   				data: str,
   				dataType: 'json'
+			})
+			.done(function(e) {
+  				console.log(e)
+  			})
+  			.fail(function(e) {
+    			console.log("testfail : "+e.response)
 			});
 		});
 		
