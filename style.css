@@ -90,3 +90,29 @@
   text-align: center;
   padding-right: 16px;
 }
+
+.budgetHistory{
+  //display: flex;
+  border-width: thin;
+  border-style: solid;
+  border-color: black;
+  height: auto;
+  width: auto  ;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.day0{
+  margin-top: 35px;
+}
+
+.dayb{
+  margin-top: 35px;
+}
+
+.daybb{
+  margin-top: 35px;
+}
