@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>Lemonade : Face/Off</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   </head>
 
 
@@ -40,31 +41,40 @@
           <th>Estimated income</th>
         </tr>
         <tr>
-          <td>Lemonade</td>
-          <td><input type="int" name="boiss1quant" value="1"></td>
-          <td>50</td>
-          <td>50</td>
-          <td><input type="int" name="boiss1price" value="1"></td>
-          <td>50</td>
+          <td><span id="boisson1">Lemonade</span></td>
+          <td><input type="int" id="boiss1quantite" value="1"></td>
+          <td><span id="boisson1coutunite">2</span></td>
+          <td><span id="boisson1couttotal">2</span></td>
+          <td><input type="int" id="boiss1prix" value="1"></td>
+          <td><span id="boisson1profits">1</span></td>
         </tr>
         <tr>
           <td>Sex on the bitches</td>
-          <td><input type="int" name="boiss2quant" value="1"></td>
-          <td>94</td>
-          <td>50</td>
-          <td><input type="int" name="boiss2price" value="1"></td>
-          <td>50</td>
+          <td><input type="int" id="boiss2quantite" value="1"></td>
+          <td><span id="boisson2coutunite">3</span></td>
+          <td><span id="boisson2couttotal">3</span></td>
+          <td><input type="int" id="boiss2prix" value="1"></td>
+          <td><span id="boisson2profits">1</span></td>
         </tr>
         <tr>
           <td>Leninade</td>
-          <td><input type="int" name="boiss3quant" value="1"></td>
-          <td>80</td>
-          <td>50</td>
-          <td><input type="int" name="boiss3price" value="1"></td>
-          <td>50</td>
+          <td><input type="int" id="boiss3quantite" value="1"></td>
+          <td><span id="boisson3coutunite">2</span></td>
+          <td><span id="boisson3couttotal">2</span></td>
+          <td><input type="int" id="boiss3prix" value="1"></td>
+          <td><span id="boisson3profits">1</span></td>
         </tr>
-      </table>
+      </table><br>
+
+      <div class="buttons">
+        <input type="Submit" value="Clear" id="clearall">
+        <input type="Submit" value="Simulate" id="simulatelikeurmom">
+        <input type="Submit" value="Order" id="order">
+      </div>
+
     </div>
+
+
 
 
     <div class="forecast">
@@ -80,6 +90,16 @@
 
 
     </section1>
+
+    <script>
+    $("#clearall").click(function(e) {
+      e.preventDefault();
+      document.getElementById("boiss1quantite",
+      "#boiss2quantite","#boiss3quantite","#boiss1prix",
+      "#boiss2prix","#boiss3prix").value="0";
+
+      })
+    </script>
 
 
   </body>

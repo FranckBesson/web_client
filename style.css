@@ -15,7 +15,7 @@
   margin-left: auto ;
   margin-right: auto;
   width: 200px;
-  height: 20px;
+  height: 40px;
 }
 
 .sectionUno{
@@ -60,6 +60,12 @@
   padding: 10px;
   border: 1px solid black;
   border-collapse: collapse;
+}
+
+.order buttons{
+  display: block;
+  margin-left: auto ;
+  margin-right: auto;
 }
 
 .forecast {
