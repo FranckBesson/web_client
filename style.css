@@ -46,14 +46,20 @@
   border-width: thin;
   border-style: solid;
   border-color: black;
-  height: 265px;
+  height: 270px;
   width: 143px ;
   margin-top: 20px;
   padding-left: 16px;
 }
 
-.logo {
+.forecast img {
   max-width: 40%;
   display: block;
+  margin: auto;
+  padding-right: 16px;
+}
 
+.forecast p{
+  text-align: center;
+  padding-right: 16px;
 }
