@@ -1,10 +1,12 @@
 var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
+
+
 $("#cash").text(gameInfo["info"]["cash"]);
 $("#sales").text(gameInfo["info"]["sales"]);
 $("#profit").text(gameInfo["info"]["profit"]);
-$("#utilisateur").text(gameInfo["name"]);
+$(".name").text(gameInfo["name"]);
 $("#latitude").text(gameInfo.location.latitude);
 $("#longitude").text(gameInfo.location.longitude);
 drinkOffered = gameInfo["info"]["drinksOffered"];
@@ -15,7 +17,7 @@ for(i = 0 ; i<drinkOffered.length ; i++)
 }
 
 
-
+//Refresh calculation when edit input
 $("input").change(function(){
 	var table = $("#mainTable").children();
 	var line = table.children(":first-child");
@@ -57,7 +59,7 @@ $("input").change(function(){
 	}
 });
 
-
+//Click on order button
 $("#order").click(function(){
 	var table = $("#mainTable").children();
 	var line = table.children(":first-child");
@@ -130,8 +132,7 @@ $("#order").click(function(){
 	//debugger;
 });
 
-
-
+//Click on Clear Button
 $("#clearall").click(function(){
 	var table = $("#mainTable").children();
 	var line = table.children(":first-child");
@@ -163,3 +164,29 @@ $("#clearall").click(function(){
 		}
 	}
 });
+
+//Periodic call -> Refresh page
+function refreshPage(){
+	//R7
+	$.get(domain+"/metrology").done(function(data){
+		var cptHeure = data.timestamp;
+		var day = (cptHeure/24).toFixed(0);
+		var heure = cptHeure%24
+		console.log(day);
+		console.log(heure);
+		$("#day").text(day);
+		$("#time").text(heure+":00");
+
+
+	});
+
+	//R5
+	$.get(domain+"/map/"+name).done(function(data){
+		var r5Resp = JSON.parse(data);
+		gameInfo.info = r5Resp.playerInfo;
+		gameInfo.map = r5Resp.map;
+		gameInfo.availableIngredients = r5Resp.availableIngredients;
+		localStorage.setItem("gameInfo",JSON.stringify(gameInfo));
+	});
+
+}

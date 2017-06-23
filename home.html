@@ -11,7 +11,7 @@
   <body>
     <div class="header">
       <header>
-        Bienvenue, <span id="utilisateur">Louis</span>
+        Bienvenue, <span class="name">Louis</span>
         <a href="home.html">Home </a>
         <a href="index.html">Log Out </a>
         <a href="testCom.html">TestPage</a>
@@ -69,13 +69,16 @@
         <span id="todayForecast"><img class="logo" src="./include/cloud.jpg"></span>
         <p>Tomorrow</p>
         <span id="tmrForecast"><img class="logo" src="./include/soleil.png"></span>
+        <p><b>Day : </b></p>
+        <p><span id="day">0</span></p>
         <p><b>Time : </b></p>
-        <p><span id="time">23:27</span></p>
+        <p><span id="time">0:00</span></p>
+        
     </div>
 
     <div class="infos">
       <h4>Player informations</h4>
-      <p>Name : <i><span id="name">Louis</span></i></p>
+      <p>Name : <i><span class="name">Louis</span></i></p>
       <p>Stand location : <i><span id="latitude">0</span>, <span id="longitude">0</span></i></p>
       <p>Cash available: <i><span id="cash">100</span> euros</i></p>
       <p>Number of sales: <i><span id="sales">100</span> drinks</i></p>
