@@ -1,11 +1,11 @@
 var domain = "http://webserverlemonade.herokuapp.com"
-
+$(".loader").hide();
 $(".start").click(function(){
+	$(".loader").show()
 	//debugger;
 	information = $(".id").val();
 	data = {"name" : information};
 	str = JSON.stringify(data);
-	$(".id").val("");
 	//debugger;
 	$.ajax({
 		type: "POST",
@@ -15,18 +15,16 @@ $(".start").click(function(){
 	})
 	.done(function(e) {
 		console.log();
-		localStorage.setItem("cash",e["info"]["cash"]);
-		localStorage.setItem("sales",e["info"]["sales"]);
-		localStorage.setItem("profit",e["info"]["profit"]);
-		localStorage.setItem("drinksOffered",JSON.stringify(e["info"]["drinksOffered"]));
-		localStorage.setItem("name",e["name"]);
-		localStorage.setItem("latitude",e["location"]["latitude"]);
-		localStorage.setItem("longitude",e["location"]["longitude"]);
-		console.log(JSON.stringify(e["info"]["drinksOffered"]));
+		localStorage.setItem("gameInfo",JSON.stringify(e));
+		console.log(localStorage.getItem("gameInfo"));
+		//debugger;
 		window.location.href = "home.html";
+
 	})
 	.fail(function(e) {
+		$(".loader").hide()
 		console.log("testfail : "+e.response)
 		alert("Echec de connexion !")
 	});
+
 });
