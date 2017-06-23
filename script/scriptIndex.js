@@ -7,6 +7,7 @@ $(".start").click(function(){
 	data = {"name" : information};
 	str = JSON.stringify(data);
 	//debugger;
+
 	$.ajax({
 		type: "POST",
 		url: domain+"/players",
@@ -17,7 +18,7 @@ $(".start").click(function(){
 		console.log();
 		localStorage.setItem("gameInfo",JSON.stringify(e));
 		console.log(localStorage.getItem("gameInfo"));
-		//debugger;
+		debugger;
 		window.location.href = "home.html";
 
 	})

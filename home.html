@@ -31,7 +31,7 @@
 
     <div class="order">
       <h4>What's up today ?</h4>
-      <table>
+      <table id= "mainTable">
         <tr>
           <th> </th>
           <th>Quantity</th>
@@ -40,14 +40,15 @@
           <th>Selling Price</th>
           <th>Estimated income</th>
         </tr>
-        <tr>
+         <tr>
           <td><span id="boiss1">Lemonade</span></td>
           <td><input type="int" id="boiss1quantite" value=""></td>
           <td><span id="boisson1coutunite">2</span></td>
-          <td><span id="boisson1couttotal">2</span></td>
+          <td><span id="boisson1couttotal">0</span></td>
           <td><input type="int" id="boiss1prix" value=""></td>
-          <td><span id="boisson1profits">1</span></td>
+          <td><span id="boisson1profits">0</span></td>
         </tr>
+        
       </table><br>
 
       <div class="buttons">
@@ -84,21 +85,7 @@
 
 
     </section1>
-    <script type="text/javascript"></script>
-    <script src="script.js"></script>
 
-    <script>
-    $("#clearall").click(function(e) {
-      e.preventDefault();
-      document.getElementById("boiss1quantite").value="";
-      document.getElementById("boiss2quantite").value="";
-      document.getElementById("boiss3quantite").value="";
-      document.getElementById("boiss1prix").value="";
-      document.getElementById("boiss2prix").value="";
-      document.getElementById("boiss3prix").value="";
-
-      })
-    </script>
     <script src="script/scriptHome.js"></script>
 
 
