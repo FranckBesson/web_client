@@ -112,6 +112,10 @@
   margin-bottom: 5px;
 }
 
+#time {
+  font-size: 25px;
+}
+
 .infos{
   display: block;
   border-width: thin;
@@ -141,6 +145,10 @@
 
 .day0{
   margin-top: 35px;
+}
+
+.day0 span{
+  font-style: italic;
 }
 
 
