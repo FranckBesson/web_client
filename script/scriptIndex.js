@@ -23,7 +23,7 @@ $(".start").click(function(){
 		localStorage.setItem("latitude",e["location"]["latitude"]);
 		localStorage.setItem("longitude",e["location"]["longitude"]);
 		console.log(JSON.stringify(e["info"]["drinksOffered"]));
-		window.location.href = "testCom.html";
+		window.location.href = "home.html";
 	})
 	.fail(function(e) {
 		console.log("testfail : "+e.response)
