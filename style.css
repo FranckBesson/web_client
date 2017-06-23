@@ -152,6 +152,14 @@
 }
 
 
-.Test{
-
+.recipemenu{
+  border-width: thin;
+  border-style: solid;
+  border-color: black;
+  height: auto;
+  width: auto  ;
+  margin-top: 20px;
+  margin-right: 15px;
+  padding-left: 15px;
+  padding-right: 25px;
 }
