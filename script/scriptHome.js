@@ -2,62 +2,11 @@ var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 
-
-$("#cash").text(gameInfo["info"]["cash"]);
-$("#sales").text(gameInfo["info"]["sales"]);
-$("#profit").text(gameInfo["info"]["profit"]);
-$(".name").text(gameInfo["name"]);
-$("#latitude").text(gameInfo.location.latitude);
-$("#longitude").text(gameInfo.location.longitude);
-drinkOffered = gameInfo["info"]["drinksOffered"];
-
-for(i = 0 ; i<drinkOffered.length ; i++)
-{
-	$("#drinksOffered").text($("#drinksOffered").text() + drinkOffered[i]["name"]+" ");
-}
-
+refreshPage();
 
 //Refresh calculation when edit input
-$("input").change(function(){
-	var table = $("#mainTable").children();
-	var line = table.children(":first-child");
-	for(var i = 1; i<table.children().length; i++){
-		var table = $("#mainTable").children();
-		var line = table.children(":first-child");
-		for(var i = 1; i<table.children().length; i++){
-
-			line = line.next();
-			var column = line.children(":first-child");
-			column = column.next();
-			var qty = column.children().val();
-			if($.isNumeric(qty) || qty == "")
-			{
-				column.children().css("background-color","white")
-			}
-			else
-			{
-				column.children().css("background-color","red")
-			}
-			column = column.next();
-			var unitPrice = column.text();
-			var column = column.next()
-			column.text(qty*unitPrice);
-			column = column.next()
-			var price = column.children().val();
-			if($.isNumeric(price) || price == "")
-			{
-				column.children().css("background-color","white")
-			}
-			else
-			{
-				column.children().css("background-color","red")
-				error = true
-			}
-			column = column.next()
-			column.text(qty*price);
-		}
-	}
-});
+$("input").keypress(calculTable);
+$("input").change(calculTable)
 
 //Click on order button
 $("#order").click(function(){
@@ -125,11 +74,6 @@ $("#order").click(function(){
 	else{
 		alert("Format error !");
 	}
-	
-
-	
-
-	//debugger;
 });
 
 //Click on Clear Button
@@ -176,17 +120,66 @@ function refreshPage(){
 		console.log(heure);
 		$("#day").text(day);
 		$("#time").text(heure+":00");
-
-
 	});
 
 	//R5
-	$.get(domain+"/map/"+name).done(function(data){
-		var r5Resp = JSON.parse(data);
+	$.get(domain+"/map/"+gameInfo.name).done(function(data){
+		debugger;
+		var r5Resp = data;
 		gameInfo.info = r5Resp.playerInfo;
 		gameInfo.map = r5Resp.map;
 		gameInfo.availableIngredients = r5Resp.availableIngredients;
 		localStorage.setItem("gameInfo",JSON.stringify(gameInfo));
+		$("#cash").text(gameInfo["info"]["cash"]);
+		$("#sales").text(gameInfo["info"]["sales"]);
+		$("#profit").text(gameInfo["info"]["profit"]);
+		$(".name").text(gameInfo["name"]);
+		$("#latitude").text(gameInfo.location.latitude);
+		$("#longitude").text(gameInfo.location.longitude);
+		drinkOffered = gameInfo["info"]["drinksOffered"];
+		setTimeout(refreshPage,2000);
 	});
+}
 
+//calculate price of drinks
+function calculTable()
+{
+	var table = $("#mainTable").children();
+	var line = table.children(":first-child");
+	for(var i = 1; i<table.children().length; i++){
+		var table = $("#mainTable").children();
+		var line = table.children(":first-child");
+		for(var i = 1; i<table.children().length; i++){
+
+			line = line.next();
+			var column = line.children(":first-child");
+			column = column.next();
+			var qty = column.children().val();
+			if($.isNumeric(qty) || qty == "")
+			{
+				column.children().css("background-color","white")
+			}
+			else
+			{
+				column.children().css("background-color","red")
+			}
+			column = column.next();
+			var unitPrice = column.text();
+			var column = column.next()
+			column.text((qty*unitPrice).toFixed(2));
+			column = column.next()
+			var price = column.children().val();
+			if($.isNumeric(price) || price == "")
+			{
+				column.children().css("background-color","white")
+			}
+			else
+			{
+				column.children().css("background-color","red")
+				error = true
+			}
+			column = column.next()
+			column.text((qty*price).toFixed(2));
+		}
+	}
 }
