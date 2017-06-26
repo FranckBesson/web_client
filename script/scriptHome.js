@@ -50,9 +50,12 @@ $("#order").click(function(){
 		}
 
 		console.log("Price : "+price);
-		toSend["action"].push({"kind":"drinks","prepare":{name:qty},"price":{name:price}});
+		toSend["action"].push({"kind":"drinks","prepare":{},"price":{}});
+		console.log(toSend);
+		toSend["action"][i-1]["prepare"][name]=qty;
+		toSend["action"][i-1]["price"][name]=price;
 	}
-	console.log(JSON.stringify(toSend));
+	console.log(toSend);
 	if(!error)
 	{
 		$.ajax({
@@ -85,37 +88,33 @@ $("#clearall").click(function(){
 	var table = $("#mainTable").children();
 	var line = table.children(":first-child");
 	for(var i = 1; i<table.children().length; i++){
-		var table = $("#mainTable").children();
-		var line = table.children(":first-child");
-		for(var i = 1; i<table.children().length; i++){
 
-			line = line.next();
-			var column = line.children(":first-child");
-			column = column.next();
-			var qty = column.children().val("");
-			column = column.next();
-			var column = column.next()
-			column.text("0");
-			column = column.next()
-			var price = column.children().val("");
-			column = column.next()
-			column.text("0");
+		line = line.next();
+		var column = line.children(":first-child");
+		column = column.next();
+		var qty = column.children().val("");
+		column = column.next();
+		var column = column.next()
+		column.text("0");
+		column = column.next()
+		var price = column.children().val("");
+		column = column.next()
+		column.text("0");
 
 
 
-			/*
-			console.log("Qty : "+qty);
+		/*
+		console.log("Qty : "+qty);
 
-			column = column.next().next();
-			var price = column.children().val();
-			console.log("Price : "+price);*/
-		}
+		column = column.next().next();
+		var price = column.children().val();
+		console.log("Price : "+price);*/
 	}
 });
 
 //Periodic call -> Refresh page
 function refreshPage(){
-	//R7
+	/*//R7
 	$.get(domain+"/metrology").done(function(data){
 		var cptHeure = data.timestamp;
 		var day = (cptHeure/24).toFixed(0);
@@ -142,7 +141,23 @@ function refreshPage(){
 		$("#longitude").text(gameInfo.location.longitude);
 		drinkOffered = gameInfo["info"]["drinksOffered"];
 		setTimeout(refreshPage,2000);
-	});
+	});*/
+	var table = $("#mainTable").children();
+	line = table.children(":first-child").next();
+	//clear Table
+	if(table.length>1)
+	{
+		for(i = 2; i<table.lenght; i++){
+			line.remove();
+			line = line.next();		
+		}
+	}
+	for(aDrink : gameInfo.info.drinksOffered){
+		$("#mainTable tr:last").after("<tr><td><span>"+aDrink.name+"</span></td><td><input type=\"int\" value=\"\"></td><td><span>"+aDrink.price+"</span></td><td><span>0</span></td><td><input type=\"int\" value=\"\"></td><td><span>0</span></td></tr>");
+	}
+	
+
+	
 }
 
 //calculate price of drinks

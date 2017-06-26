@@ -33,7 +33,7 @@
     </nav>
 
     <section1 class="sectionUno">
-      <div class="settings">
+      <!--div class="settings">
         <h4>Settings</h4><br>
         <ul>
         <li><a href="budget.html"><p>See budget history</p></a></li>
@@ -42,9 +42,53 @@
         <li><a href="billboards.html"><p>Buy billboards</p></a></li>
         <li><a href="map.html"><p>See the Map</p></a></li>
       </ul>
+    </div-->
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Settings</h4><br>
+        <ul>
+          <li><a href="budget.html"><p>See budget history</p></a></li>
+          <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
+          <li><a href="create.html"><p>Create recipes</p></a></li>
+          <li><a href="billboards.html"><p>Buy billboards</p></a></li>
+          <li><a href="map.html"><p>See the Map</p></a></li>
+       </ul>
+      </div>
     </div>
 
-    <div class="order">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>What's up today ?</h4>
+        <table class="table table-bordered" id= "mainTable">
+          <tr>
+            <th width="40px"> </th>
+            <th>Quantity</th>
+            <th>Unit Cost</th>
+            <th>Production Cost</th>
+            <th>Selling Price</th>
+            <th>Estimated income</th>
+          </tr>
+           <tr>
+            <td><span id="boiss1">Lemonade</span></td>
+            <td><input type="int" id="boiss1quantite" value=""></td>
+            <td><span id="boisson1coutunite">2</span></td>
+            <td><span id="boisson1couttotal">0</span></td>
+            <td><input type="int" id="boiss1prix" value=""></td>
+            <td><span id="boisson1profits">0</span></td>
+          </tr>
+        </table><br>
+
+        <div class="buttons">
+          <input class="btn-danger" type="Submit" value="Clear" id="clearall">
+          <input class="btn-warning "type="Submit" value="Refresh" id="refresh" onClick="window.location.reloadœ()">
+          <input class="btn-success" type="Submit" value="Order" id="order">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--div class="order">
       <h4>What's up today ?</h4>
       <table class="table table-bordered" id= "mainTable">
         <tr>
@@ -55,15 +99,6 @@
           <th>Selling Price</th>
           <th>Estimated income</th>
         </tr>
-         <tr>
-          <td><span id="boiss1">Lemonade</span></td>
-          <td><input type="int" id="boiss1quantite" value=""></td>
-          <td><span id="boisson1coutunite">2</span></td>
-          <td><span id="boisson1couttotal">0</span></td>
-          <td><input type="int" id="boiss1prix" value=""></td>
-          <td><span id="boisson1profits">0</span></td>
-        </tr>
-
       </table><br>
 
       <div class="buttons">
@@ -73,12 +108,22 @@
         <div class="loader"></div>
       </div>
 
+    </div-->
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>Today</p>
+        <span id="todayForecast"><img class="logo" src="./include/cloud.jpg"></span>
+        <p>Tomorrow</p>
+        <span id="tmrForecast"><img class="logo" src="./include/soleil.png"></span>
+        <p><b>Day : </b></p>
+        <p><span id="day">0</span></p>
+        <p><b>Time : </b></p>
+        <p><span id="time">0:00</span></p>
+      </div>
     </div>
 
-
-
-
-    <div class="forecast">
+    <!--div class="forecast">
       <h4>Forecast</h4>
         <p>Today</p>
         <span id="todayForecast"><img class="logo" src="./include/cloud.jpg"></span>
@@ -88,10 +133,21 @@
         <p><span id="day">0</span></p>
         <p><b>Time : </b></p>
         <p><span id="time">0:00</span></p>
+    </div-->
 
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Player informations</h4>
+        <p>Name : <i><span class="name">Louis</span></i></p>
+        <p>Stand location : <i><span id="latitude">0</span>, <span id="longitude">0</span></i></p>
+        <p>Cash available: <i><span id="cash">100</span> euros</i></p>
+        <p>Number of sales: <i><span id="sales">100</span> drinks</i></p>
+        <p>Profit made: <i><span id="profit">-100</span> euros</i></p>
+        <p> List of drinks: <i><span id="drinksOffered">Leninade</span></i></p>
+      </div>
     </div>
 
-    <div class="infos">
+    <!--div class="infos">
       <h4>Player informations</h4>
       <p>Name : <i><span class="name">Louis</span></i></p>
       <p>Stand location : <i><span id="latitude">0</span>, <span id="longitude">0</span></i></p>
@@ -99,7 +155,7 @@
       <p>Number of sales: <i><span id="sales">100</span> drinks</i></p>
       <p>Profit made: <i><span id="profit">-100</span> euros</i></p>
       <p> List of drinks: <i><span id="drinksOffered">Leninade</span></i></p>
-    </div>
+    </div-->
 
 
     </section1>

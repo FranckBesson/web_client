@@ -32,18 +32,20 @@
     </nav>
 
     <section1 class="sectionUno">
-      <div class="settings">
-        <h4>Settings</h4><br>
-        <ul>
-        <li><a href="budget.html"><p>See budget history</p></a></li>
-        <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
-        <li><a href="create.html"><p>Create recipes</p></a></li>
-        <li><a href="billboards.html"><p>Buy billboards</p></a></li>
-        <li><a href="map.html"><p>See the Map</p></a></li>
-      </ul>
-    </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Settings</h4><br>
+          <ul>
+            <li><a href="budget.html"><p>See budget history</p></a></li>
+            <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
+            <li><a href="create.html"><p>Create recipes</p></a></li>
+            <li><a href="billboards.html"><p>Buy billboards</p></a></li>
+            <li><a href="map.html"><p>See the Map</p></a></li>
+         </ul>
+        </div>
+      </div>
 
-    <div class="settingsbox">
+    <!--div class="settingsbox">
       <div class="budget">
         <h4>Budget and results history</h4><br>
         <!--form class="daychoose" action="budget.html" method="post">
@@ -53,7 +55,7 @@
             <option value="21/06/12">21/06/12</option>
           </span>
           </select>
-        </form-->
+        </form>
 
         <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Day to consult
@@ -76,7 +78,48 @@
           <p>End of the day budget : <span id="eotdbudget">350</span> euros</p>
         </div>
       </div>
+    </div-->
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="budget">
+          <h4>Budget and results history</h4><br>
+          <!--form class="daychoose" action="budget.html" method="post">
+            <label for="daymenu">Day to consult : </label>
+            <select name="daymenu" id="daymenu"><span id="date">
+              <option value="20/06/12">20/06/12</option>
+              <option value="21/06/12">21/06/12</option>
+            </span>
+            </select>
+          </form-->
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Day to consult
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">20/06/12</a></li>
+                  <li><a href="#">21/06/12</a></li>
+                  <li><a href="#">22/06/12</a></li>
+                </ul>
+              </div>
+
+          <div class="day0" id="currentDay">
+            <p>Initial budget : <span id="budget">100</span> euros</p>
+            <p>Expenses : <span id="expenses">50</span> euros</p>
+            <p>Number of drinks made : <span id="nbdrinkmade">20</span></p>
+            <p>Menu of the day : <span id="drinksOffered">Lemonade, Leninade</span></p>
+            <p>Number of drinks sold : <span id="nbdrinksold">19</span></p>
+            <p>Incomes : <span id="incomes">300</span> euros</p>
+            <p>Profit : <span id="profit">250</span> euros</p>
+            <p>End of the day budget : <span id="eotdbudget">350</span> euros</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+
+
     </section1>
     <script src="script/scriptBillboards.js"></script>
     <script src="./js/bootstrap.min.js"></script>
