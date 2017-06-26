@@ -52,7 +52,7 @@
   margin-top: 20px;
   padding-left: 16px;
   padding-right: 10px;
-
+  margin-left: 10px;
 }
 
 .order{
@@ -78,6 +78,12 @@
   padding: 10px;
   border: 1px solid black;
   border-collapse: collapse;
+
+}
+
+.td {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .order buttons{
