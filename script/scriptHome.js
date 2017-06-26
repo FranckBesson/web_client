@@ -3,6 +3,7 @@ console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 
 refreshPage();
+$(".loader").hide();
 
 //Refresh calculation when edit input
 $("input").keypress(calculTable);
@@ -14,13 +15,14 @@ $("#order").click(function(){
 	var line = table.children(":first-child");
 	var toSend = {"action":[]};
 	var error = false;
+	$(".loader").show();
 	for(var i = 1; i<table.children().length; i++){
 		line = line.next();
 		var column = line.children(":first-child");
 		console.log(column);
 		var name = column.text();
 		console.log("Name : "+name);
-		
+
 		column = column.next()
 		var qty = column.children().val();
 		if($.isNumeric(qty))
@@ -32,9 +34,9 @@ $("#order").click(function(){
 			column.children().css("background-color","red")
 			error = true
 		}
-		
+
 		console.log("Qty : "+qty);
-		
+
 		column = column.next().next().next();
 		var price = column.children().val();
 		if($.isNumeric(price))
@@ -60,18 +62,20 @@ $("#order").click(function(){
 			contentType: 'application/json'
 		})
 		.done(function(e) {
+			$(".loader").hide();
 			console.log(e);
 			//debugger;
 
 		})
 		.fail(function(e) {
-			$(".loader").hide()
-			console.log("testfail : "+e.response)
-			alert("Echec de connexion !")
+			$(".loader").hide();
+			console.log("testfail : "+e.response);
+			alert("Echec de connexion !");
 		});
-	
+
 	}
 	else{
+		$(".loader").hide();
 		alert("Format error !");
 	}
 });
@@ -101,7 +105,7 @@ $("#clearall").click(function(){
 
 			/*
 			console.log("Qty : "+qty);
-			
+
 			column = column.next().next();
 			var price = column.children().val();
 			console.log("Price : "+price);*/
