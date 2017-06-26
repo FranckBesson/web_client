@@ -4,18 +4,32 @@
   <meta charset="utf-8" />
   <title>Lemonade : Face/Off</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   </head>
 
 
   <body>
-    <div class="header">
+    <!--div class="header">
       <header>
         Bienvenue, <span id="utilisateur"></span>
         <a href="home.html">Home </a>
         <a href="index.html">Log Out </a>
       </header>
-    </div>
+    </div-->
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SHANGJUAN</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home.html">Home</a></li>
+          <li><a href="index.html">Log Out</a></li>
+          <li><a href="#">Bienvenue, <span id="utilisateur">Louis</span></a></li>
+        </ul>
+      </div>
+    </nav>
 
     <section1 class="sectionUno">
       <div class="settings">
@@ -41,13 +55,13 @@
           <input type="checkbox" name="sparkling_water" id="sparkling" />
            <label for="sparkling_water">Sparkling water</label><br />
           <input type="checkbox" name="lemon" id="lemon" />
-           <label for="Lemon">Lemon</label><br />
+           <label for="lemon">Lemon</label><br />
           <input type="checkbox" name="sugar" id="sugar" />
-           <label for="Sugar">Sugar</label><br />
+           <label for="sugar">Sugar</label><br />
           <input type="checkbox" name="milk" id="milk" />
-           <label for="Milk">Milk</label><br />
+           <label for="silk">Milk</label><br />
           <input type="checkbox" name="pineapple" id="pineapple" />
-           <label for="Pineapple">Pineapple</label><br />
+           <label for="pineapple">Pineapple</label><br />
         </p>
         <input type="Submit" value="Create" id="createbutton"> <br>
         </form>
@@ -73,5 +87,6 @@
     </div>
     </section1>
     <script src="script/scriptBillboards.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
   </body>
 </html>
