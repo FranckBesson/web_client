@@ -26,14 +26,14 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="home.html">Home</a></li>
           <li><a href="index.html">Log Out</a></li>
-          <li><a href="#">Bienvenue, <span id="utilisateur">Louis</span></a></li>
+          <li><a href="#">Bienvenue, <span id="utilisateur"></span></a></li>
         </ul>
       </div>
     </nav>
 
     <section1 class="sectionUno">
       <div class="settings">
-        <h4>Settings</h4>
+        <h4>Settings</h4><br>
         <ul>
         <li><a href="budget.html"><p>See budget history</p></a></li>
         <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
@@ -45,15 +45,25 @@
 
     <div class="settingsbox">
       <div class="budget">
-        <h4>Budget and results history</h4>
-        <form class="daychoose" action="budget.html" method="post">
+        <h4>Budget and results history</h4><br>
+        <!--form class="daychoose" action="budget.html" method="post">
           <label for="daymenu">Day to consult : </label>
           <select name="daymenu" id="daymenu"><span id="date">
             <option value="20/06/12">20/06/12</option>
             <option value="21/06/12">21/06/12</option>
           </span>
           </select>
-        </form>
+        </form-->
+
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Day to consult
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">20/06/12</a></li>
+                <li><a href="#">21/06/12</a></li>
+                <li><a href="#">22/06/12</a></li>
+              </ul>
+            </div>
 
         <div class="day0" id="currentDay">
           <p>Initial budget : <span id="budget">100</span> euros</p>
@@ -71,4 +81,4 @@
     <script src="script/scriptBillboards.js"></script>
     <script src="./js/bootstrap.min.js"></script>
   </body>
-</html>
+  </html>

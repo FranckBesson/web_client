@@ -53,6 +53,7 @@
   padding-left: 16px;
   padding-right: 10px;
   margin-left: 10px;
+  min-width: 159px;
 }
 
 .order{
@@ -72,6 +73,9 @@
 .order table{
   border: 1px solid black;
   border-collapse: collapse;
+  padding: 5px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
 }
 
 .order th, td{
@@ -80,6 +84,8 @@
   border-collapse: collapse;
   margin-left: 5px !important ;
   margin-right: 5px !important ;
+  vertical-align: middle !important;
+  text-align: center !important;
 }
 
 .order buttons{
