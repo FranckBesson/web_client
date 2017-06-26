@@ -12,6 +12,169 @@
   <body>
     <!--div class="header">
       <header>
+        Bienvenue, <span id="utilisateur"></span>
+        <a href="home.html">Home </a>
+        <a href="index.html">Log Out </a>
+      </header>
+    </div-->
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SHANGJUAN</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home.html">Home</a></li>
+          <li><a href="index.html">Log Out</a></li>
+          <li><a href="#">Bienvenue, <span id="utilisateur">Louis</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section1 class="sectionUno">
+      <div class="settings">
+        <h4>Settings</h4>
+        <ul>
+        <li><a href="budget.html"><p>See budget history</p></a></li>
+        <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
+        <li><a href="create.html"><p>Create recipes</p></a></li>
+        <li><a href="billboards.html"><p>Buy billboards</p></a></li>
+        <li><a href="map.html"><p>See the Map</p></a></li>
+      </ul>
+    </div>
+
+    <div class="settingsbox">
+      <h4>Buy billboards</h4>
+
+      <div class="billboardform">
+        <label for="bblatitude">Latitude :</label>
+        <input type="float" id="bblatitude" name="bblatitude"><br><br>
+        <label for="bblongitude">Longitude :</label>
+        <input type="float" id="bblongitude" name="bblongitude"> <br><br>
+
+        <form class="size" action="map.html" method="post">
+          <label for="bbsize">Size : </label>
+          <select name="bbsize" id="bbsize">
+            <option id="small" value="small">Small</option>
+            <option id="medium" value="medium">Medium</option>
+            <option id="big" value="big">Big</option>
+            <option id="huge" value="huge">Huge</option>
+          </select>
+        </form>
+        <p>Price : <span id="bbprice"></span> euros <br>
+          My cash : <span id="cash">30</span> euros
+        </p>
+        <input type="Submit" value="Buy !" id="buybillboard"> <br>
+      </div>
+    </div>
+
+    <div class="mybillboards">
+      <h4>My billboards</h4>
+      <p>
+        <span id="bb1">Number 1 :</span>
+          <ul>
+            <li>Position: <span id="bb1latitude">1.4534</span> / <span id="bb1longitude">2.43535</span></li>
+            <li>Size: <span id="bb1size">Big</span></li>
+        </ul>
+        <span id="bb2">Number 2 :</span>
+          <ul>
+            <li>Position: <span id="bb2latitude">3.44</span> / <span id="bb2longitude">4.35</span></li>
+            <li>Size: <span id="bb2size">Small</span></li>
+        </ul>
+      </p>
+    </div>
+
+    </section1>
+    <script src="script/scriptCreate.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+  <body>
+    <!--div class="header">
+      <header>
+        Bienvenue, <span id="utilisateur">Louis</span>
+        <a href="home.html">Home </a>
+        <a href="index.html">Log Out </a>
+      </header>
+    </div-->
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SHANGJUAN</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home.html">Home</a></li>
+          <li><a href="index.html">Log Out</a></li>
+          <li><a href="#">Bienvenue, <span id="utilisateur">Louis</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section1 class="sectionUno">
+      <div class="settings">
+        <h4>Settings</h4>
+        <ul>
+        <li><a href="budget.html"><p>See budget history</p></a></li>
+        <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
+        <li><a href="create.html"><p>Create recipes</p></a></li>
+        <li><a href="billboards.html"><p>Buy billboards</p></a></li>
+        <li><a href="map.html"><p>See the Map</p></a></li>
+      </ul>
+    </div>
+
+    <div class="settingsbox">
+      <h4>Buy billboards</h4>
+
+      <div class="billboardform">
+        <label for="bblatitude">Latitude :</label>
+        <input type="float" id="bblatitude" name="bblatitude"><br><br>
+        <label for="bblongitude">Longitude :</label>
+        <input type="float" id="bblongitude" name="bblongitude"> <br><br>
+
+        <form class="size" action="map.html" method="post">
+          <label for="bbsize">Size : </label>
+          <select name="bbsize" id="bbsize">
+            <option id="small" value="small">Small</option>
+            <option id="medium" value="medium">Medium</option>
+            <option id="big" value="big">Big</option>
+            <option id="huge" value="huge">Huge</option>
+          </select>
+        </form>
+        <p>Price : <span id="bbprice"></span> euros <br>
+          My cash : <span id="cash">30</span> euros
+        </p>
+        <input type="Submit" value="Buy !" id="buybillboard"> <br>
+      </div>
+    </div>
+
+    <div class="mybillboards">
+      <h4>My billboards</h4>
+      <p>
+        <span id="bb1">Number 1 :</span>
+          <ul>
+            <li>Position: <span id="bb1latitude">1.4534</span> / <span id="bb1longitude">2.43535</span></li>
+            <li>Size: <span id="bb1size">Big</span></li>
+        </ul>
+        <span id="bb2">Number 2 :</span>
+          <ul>
+            <li>Position: <span id="bb2latitude">3.44</span> / <span id="bb2longitude">4.35</span></li>
+            <li>Size: <span id="bb2size">Small</span></li>
+        </ul>
+      </p>
+    </div>
+
+    </section1>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+  <body>
+    <!--div class="header">
+      <header>
         Bienvenue, <span id="utilisateur">Louis</span>
         <a href="home.html">Home </a>
         <a href="index.html">Log Out </a>

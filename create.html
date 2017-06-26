@@ -12,6 +12,171 @@
   <body>
     <!--div class="header">
       <header>
+        Bienvenue, <span id="utilisateur"></span>
+        <a href="home.html">Home </a>
+        <a href="index.html">Log Out </a>
+      </header>
+    </div-->
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SHANGJUAN</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home.html">Home</a></li>
+          <li><a href="index.html">Log Out</a></li>
+          <li><a href="#">Bienvenue, <span id="utilisateur">Louis</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section1 class="sectionUno">
+      <div class="settings">
+        <h4>Settings</h4>
+        <ul>
+        <li><a href="budget.html"><p>See budget history</p></a></li>
+        <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
+        <li><a href="create.html"><p>Create recipes</p></a></li>
+        <li><a href="billboards.html"><p>Buy billboards</p></a></li>
+        <li><a href="map.html"><p>See the Map</p></a></li>
+      </ul>
+    </div>
+
+    <div class="settingsbox">
+      <h4>Create recipes</h4>
+
+      <div class="creation">
+        <label for="recipename">Name :</label>
+        <input type="text" id="recipename" name="recipename">
+
+        <p>Ingredients : <br>
+          <form class="createform">
+          <input type="checkbox" name="sparkling_water" id="sparkling" />
+           <label for="sparkling_water">Sparkling water</label><br />
+          <input type="checkbox" name="lemon" id="lemon" />
+           <label for="lemon">Lemon</label><br />
+          <input type="checkbox" name="sugar" id="sugar" />
+           <label for="sugar">Sugar</label><br />
+          <input type="checkbox" name="milk" id="milk" />
+           <label for="silk">Milk</label><br />
+          <input type="checkbox" name="pineapple" id="pineapple" />
+           <label for="pineapple">Pineapple</label><br />
+        </p>
+        <input type="Submit" value="Create" id="createbutton"> <br>
+        </form>
+      </div>
+    </div>
+
+    <div class="recipemenu">
+      <h4>Recipe Menu</h4>
+      <p>
+        <span id="r1name">Lemonade :</span>
+          <ul>
+            <li><span id="r1ing1">Sugar</span></li>
+            <li><span id="r1ing2">Lemon</span></li>
+        </ul>
+        <span id="r2name">English tea:</span>
+        <ul>
+          <li><span id="r2ing1">Sugar</span></li>
+          <li><span id="r2ing2">Tea</span></li>
+          <li><span id="r2ing3">Milk</span></li>
+        </ul>
+      </p>
+
+    </div>
+    </section1>
+    <script src="script/scriptBillboards.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+  <body>
+    <!--div class="header">
+      <header>
+        Bienvenue, <span id="utilisateur">Louis</span>
+        <a href="home.html">Home </a>
+        <a href="index.html">Log Out </a>
+      </header>
+    </div-->
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SHANGJUAN</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home.html">Home</a></li>
+          <li><a href="index.html">Log Out</a></li>
+          <li><a href="#">Bienvenue, <span id="utilisateur">Louis</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section1 class="sectionUno">
+      <div class="settings">
+        <h4>Settings</h4>
+        <ul>
+        <li><a href="budget.html"><p>See budget history</p></a></li>
+        <li><a href="ingredients.html"><p>Buy ingredients</p></a></li>
+        <li><a href="create.html"><p>Create recipes</p></a></li>
+        <li><a href="billboards.html"><p>Buy billboards</p></a></li>
+        <li><a href="map.html"><p>See the Map</p></a></li>
+      </ul>
+    </div>
+
+    <div class="settingsbox">
+      <h4>Create recipes</h4>
+
+      <div class="creation">
+        <label for="recipename">Name :</label>
+        <input type="text" id="recipename" name="recipename">
+
+        <p>Ingredients : <br>
+          <form class="createform">
+          <input type="checkbox" name="sparkling_water" id="sparkling" />
+           <label for="sparkling_water">Sparkling water</label><br />
+          <input type="checkbox" name="lemon" id="lemon" />
+           <label for="lemon">Lemon</label><br />
+          <input type="checkbox" name="sugar" id="sugar" />
+           <label for="sugar">Sugar</label><br />
+          <input type="checkbox" name="milk" id="milk" />
+           <label for="silk">Milk</label><br />
+          <input type="checkbox" name="pineapple" id="pineapple" />
+           <label for="pineapple">Pineapple</label><br />
+        </p>
+        <input type="Submit" value="Create" id="createbutton"> <br>
+        </form>
+      </div>
+    </div>
+
+    <div class="recipemenu">
+      <h4>Recipe Menu</h4>
+      <p>
+        <span id="r1name">Lemonade :</span>
+          <ul>
+            <li><span id="r1ing1">Sugar</span></li>
+            <li><span id="r1ing2">Lemon</span></li>
+        </ul>
+        <span id="r2name">English tea:</span>
+        <ul>
+          <li><span id="r2ing1">Sugar</span></li>
+          <li><span id="r2ing2">Tea</span></li>
+          <li><span id="r2ing3">Milk</span></li>
+        </ul>
+      </p>
+
+    </div>
+    </section1>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+  <body>
+    <!--div class="header">
+      <header>
         Bienvenue, <span id="utilisateur">Louis</span>
         <a href="home.html">Home </a>
         <a href="index.html">Log Out </a>
