@@ -1,7 +1,8 @@
 var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
-
+saveDrinkOffer = gameInfo.info.drinksOffered;
+first = true;
 refreshPage();
 $(".loader").hide();
 
@@ -114,47 +115,48 @@ $("#clearall").click(function(){
 
 //Periodic call -> Refresh page
 function refreshPage(){
-	/*//R7
+	//R7
 	$.get(domain+"/metrology").done(function(data){
 		var cptHeure = data.timestamp;
 		var day = (cptHeure/24).toFixed(0);
 		var heure = cptHeure%24
-		console.log(day);
-		console.log(heure);
+		/*
+		//R5
+		$.get(domain+"/map/"+gameInfo.name).done(function(data){
+			debugger;
+			var r5Resp = data;
+			gameInfo.info = r5Resp.playerInfo;
+			gameInfo.map = r5Resp.map;
+			gameInfo.availableIngredients = r5Resp.availableIngredients;
+			localStorage.setItem("gameInfo",JSON.stringify(gameInfo));
+			
+		});*/
 		$("#day").text(day);
-		$("#time").text(heure+":00");
-	});
-
-	//R5
-	$.get(domain+"/map/"+gameInfo.name).done(function(data){
-		debugger;
-		var r5Resp = data;
-		gameInfo.info = r5Resp.playerInfo;
-		gameInfo.map = r5Resp.map;
-		gameInfo.availableIngredients = r5Resp.availableIngredients;
-		localStorage.setItem("gameInfo",JSON.stringify(gameInfo));
+		$("#time").text(heure+":00");	
 		$("#cash").text(gameInfo["info"]["cash"]);
 		$("#sales").text(gameInfo["info"]["sales"]);
 		$("#profit").text(gameInfo["info"]["profit"]);
 		$(".name").text(gameInfo["name"]);
 		$("#latitude").text(gameInfo.location.latitude);
 		$("#longitude").text(gameInfo.location.longitude);
-		drinkOffered = gameInfo["info"]["drinksOffered"];
-		setTimeout(refreshPage,2000);
-	});*/
-	var table = $("#mainTable").children();
-	line = table.children(":first-child").next();
-	//clear Table
-	if(table.length>1)
-	{
-		for(i = 2; i<table.lenght; i++){
-			line.remove();
-			line = line.next();		
+
+
+		//clear Table
+		if(saveDrinkOffer != gameInfo.info.drinksOffered || first){
+			saveDrinkOffer = gameInfo.info.drinksOffered
+			first = false;
+			console.log("different")
+			$("#mainTable tr:not(:first)").remove();
+			for(i in gameInfo.info.drinksOffered){
+				var name = capitalizeFirstLetter(gameInfo.info.drinksOffered[i].name);
+				$("#mainTable tr:last").after("<tr><td><span>"+name+"</span></td><td><input type=\"int\" value=\"\"></td><td><span>"+gameInfo.info.drinksOffered[i].price+"</span></td><td><span>0</span></td><td><input type=\"int\" value=\"\"></td><td><span>0</span></td></tr>");
+			}
 		}
-	}
-	for(aDrink : gameInfo.info.drinksOffered){
-		$("#mainTable tr:last").after("<tr><td><span>"+aDrink.name+"</span></td><td><input type=\"int\" value=\"\"></td><td><span>"+aDrink.price+"</span></td><td><span>0</span></td><td><input type=\"int\" value=\"\"></td><td><span>0</span></td></tr>");
-	}
+		setTimeout(refreshPage,2000);
+	});
+
+	
+
 	
 
 	
@@ -201,4 +203,8 @@ function calculTable()
 			column.text((qty*price).toFixed(2));
 		}
 	}
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
