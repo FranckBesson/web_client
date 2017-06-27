@@ -47,27 +47,30 @@
 
       <div class="panel panel-default">
         <div class="panel-body">
-          <h4>Create recipes</h4>
+          <h4>Create recipes</h4><br>
 
           <div class="creation">
             <label for="recipename">Name :</label>
-            <input type="text" id="recipename" name="recipename"><br>
+            <input type="text" id="recipename" name="recipename">
+            <input type="Submit" value="Create" id="createbutton"> <br><br>
 
-            <p>Ingredients : <br>
-              <form class="createform">
-              <input type="checkbox" name="sparkling_water" id="sparkling" />
-               <label for="sparkling_water">Sparkling water</label><br>
-              <input type="checkbox" name="lemon" id="lemon" />
-               <label for="lemon">Lemon</label><br>
-              <input type="checkbox" name="sugar" id="sugar" />
-               <label for="sugar">Sugar</label><br>
-              <input type="checkbox" name="milk" id="milk" />
-               <label for="silk">Milk</label><br>
-              <input type="checkbox" name="pineapple" id="pineapple" />
-               <label for="pineapple">Pineapple</label><br>
-            </p>
-            <input type="Submit" value="Create" id="createbutton"> <br>
-            </form>
+            <p><h5>Add ingredients :</h5>
+              <form class="size" action="create.html" method="post">
+                 <span>Select recipe :</span>
+                <select name="selectrecipe" id="selectrecipe">
+                  <option id="lemonade" value="lemonade">Lemonade</option>
+                  <option id="leninade" value="leninade">Leninade</option>
+                  <option id="mojito" value="mojito">Mojito</option>
+                </select>
+                <span>, select ingredient :</span>
+                <select name="selectingredient" id="selectingredient">
+                  <option id="alcohol" value="alcohol">Alcohol</option>
+                  <option id="sugar" value="sugar">Sugar</option>
+                  <option id="minth" value="minth">Minth</option>
+                </select>
+              </form>
+              <br><input type="Submit" value="Add" id="addIngredient"> <br>
+
           </div>
         </div>
       </div>
@@ -99,7 +102,7 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <h4>Recipe Menu</h4>
+        <h4>Recipe Menu</h4><br>
         <p>
           <span id="r1name">Lemonade :</span>
             <ul>
@@ -133,7 +136,7 @@
       </p>
 
     </div-->
-    
+
     </section1>
     <script src="script/scriptCreate.js"></script>
     <script src="./js/bootstrap.min.js"></script>
