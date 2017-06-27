@@ -56,21 +56,32 @@
 
             <p><h5>Add ingredients :</h5>
               <form class="size" action="create.html" method="post">
-                 <span>Select recipe :</span>
-                <select name="selectrecipe" id="selectrecipe">
-                  <option id="lemonade" value="lemonade">Lemonade</option>
-                  <option id="leninade" value="leninade">Leninade</option>
-                  <option id="mojito" value="mojito">Mojito</option>
-                </select>
-                <span>, select ingredient :</span>
+                <span>Select ingredient :</span>
                 <select name="selectingredient" id="selectingredient">
                   <option id="alcohol" value="alcohol">Alcohol</option>
                   <option id="sugar" value="sugar">Sugar</option>
                   <option id="minth" value="minth">Minth</option>
                 </select>
-              </form>
-              <br><input type="Submit" value="Add" id="addIngredient"> <br>
+                <input type="Submit" value="Add" id="addIngredient"> <br>
+              </form
+          </div><br>
 
+          <div class="recipeTable">
+            <table class="recipeTable table table-bordered">
+              <tr>
+                <th>Ingredient</th>
+                <th>Production cost</th>
+              </tr>
+              <tr>
+                <td>Lemon</td>
+                <td>1 euros</td>
+              </tr>
+              <tr>
+                <td>Sugar</td>
+                <td>2 euros</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
