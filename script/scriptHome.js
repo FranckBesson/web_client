@@ -51,7 +51,7 @@ $("#order").click(function(){
 		}
 
 		console.log("Price : "+price);
-		toSend["action"].push({"kind":"drinks","prepare":{},"price":{}});
+		toSend["actions"].push({"kind":"drinks","prepare":{},"price":{}});
 		console.log(toSend);
 		toSend["action"][i-1]["prepare"][name]=qty;
 		toSend["action"][i-1]["price"][name]=price;
