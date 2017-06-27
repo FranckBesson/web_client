@@ -1,8 +1,8 @@
 var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
-
-//refreshPage();
+$("#bbprice").text("10");
+refreshPage();
 
 $(".name").text(gameInfo["name"]);
 console.log(gameInfo["name"])
@@ -13,6 +13,7 @@ $("#buybillboard").click(function(){
 	var latitude = $("#bblatitude").val();
 	var longitude =$("#bblongitude").val();
 	var size = $("#bbsize").val();
+	var price = 0
 	var sizeint = 0
 	switch (size) {
 		case "small" :
@@ -40,11 +41,9 @@ $("#buybillboard").click(function(){
 		})
 })
 
-
 function refreshPage(){
 	//R5
 	$.get(domain+"/map/"+gameInfo.name).done(function(data){
-		debugger;
 		var r5Resp = data;
 		gameInfo.info = r5Resp.playerInfo;
 		gameInfo.map = r5Resp.map;
@@ -54,3 +53,21 @@ function refreshPage(){
 		setTimeout(refreshPage,2000);
 	})
 };
+
+$("#bbsize").on('change',function(){
+	var size = this.value
+	switch (size) {
+		case "small" :
+			$("#bbprice").text("10");
+			break
+		case "medium" :
+			$("#bbprice").text("20");
+			break
+		case "big" :
+			$("#bbprice").text("30");
+			break
+		case "huge" :
+			$("#bbprice").text("40");
+			break
+	}
+})
