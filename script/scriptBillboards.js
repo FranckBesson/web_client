@@ -35,7 +35,7 @@ $("#buybillboard").click(function(){
 	console.log(JSON.stringify(temp))
 	$.ajax({
 			type: "POST",
-			url: domain+"/action/"+gameInfo["name"],
+			url: domain+"/actions/"+gameInfo["name"],
 			data: JSON.stringify(temp),
 			contentType: 'application/json'
 		})
