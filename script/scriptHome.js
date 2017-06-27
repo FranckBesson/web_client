@@ -14,7 +14,7 @@ $("input").change(calculTable)
 $("#order").click(function(){
 	var table = $("#mainTable").children();
 	var line = table.children(":first-child");
-	var toSend = {"action":[]};
+	var toSend = {"actions":[]};
 	var error = false;
 	$(".loader").show();
 	for(var i = 1; i<table.children().length; i++){
@@ -53,8 +53,8 @@ $("#order").click(function(){
 		console.log("Price : "+price);
 		toSend["actions"].push({"kind":"drinks","prepare":{},"price":{}});
 		console.log(toSend);
-		toSend["action"][i-1]["prepare"][name]=qty;
-		toSend["action"][i-1]["price"][name]=price;
+		toSend["actions"][i-1]["prepare"][name]=qty;
+		toSend["actions"][i-1]["price"][name]=price;
 	}
 	console.log(toSend);
 	if(!error)
