@@ -31,7 +31,7 @@ $("#buybillboard").click(function(){
 	}
 	console.log(size);
 	var temp = {"actions":[]};
-	temp.actions = {"kind":"ad","location":{"latitude":latitude,"longitude":longitude},"radius":sizeint}
+	temp.actions.push({"kind":"ad","location":{"latitude":latitude,"longitude":longitude},"radius":sizeint})
 	console.log(JSON.stringify(temp))
 	$.ajax({
 			type: "POST",
