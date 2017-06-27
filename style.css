@@ -38,8 +38,8 @@
 
 .sectionUno{
   display: flex;
-  //justify-content: center;
-  //align-items: baseline; s
+  //justify-content: space-around;
+  //align-items: baseline;
 }
 
 .settings {
