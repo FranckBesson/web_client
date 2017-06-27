@@ -78,6 +78,7 @@ function refreshPage(){
   //R9
   $.get(domain+"/ingredients").done(function(data){
     console.log(data)
+    $("#utilisateur").text(gameInfo["name"]);
     gameInfo.availableIngredients = data.ingredients
     localStorage.setItem("gameInfo",JSON.stringify(gameInfo));
   });

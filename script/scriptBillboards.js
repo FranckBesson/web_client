@@ -4,7 +4,7 @@ var domain = "http://webserverlemonade.herokuapp.com";
 $("#bbprice").text("10");
 refreshPage();
 
-$(".name").text(gameInfo["name"]);
+$("#utilisateur").text(gameInfo["name"]);
 console.log(gameInfo["name"])
 console.log($("#bbsize").val());
 
