@@ -6,9 +6,7 @@ first = true;
 refreshPage();
 $(".loader").hide();
 
-//Refresh calculation when edit input
-$("input").keypress(calculTable);
-$("input").change(calculTable)
+
 
 //Click on order button
 $("#order").click(function(){
@@ -21,7 +19,7 @@ $("#order").click(function(){
 		line = line.next();
 		var column = line.children(":first-child");
 		console.log(column);
-		var name = column.text();
+		var name = column.text().toLowerCase();;
 		console.log("Name : "+name);
 
 		column = column.next()
@@ -153,6 +151,9 @@ function refreshPage(){
 			}
 		}
 		setTimeout(refreshPage,2000);
+		//Refresh calculation when edit input
+		$("input").keypress(calculTable);
+		$("input").change(calculTable)
 	});
 
 	
