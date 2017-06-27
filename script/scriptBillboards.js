@@ -13,27 +13,29 @@ $("#buybillboard").click(function(){
 	var latitude = $("#bblatitude").val();
 	var longitude =$("#bblongitude").val();
 	var size = $("#bbsize").val();
+	var sizeint = 0
 	switch (size) {
-		case "Small" :
-			size = 1
+		case "small" :
+			sizeint = 1
 			break
-		case "Medium" :
-			size = 2
+		case "medium" :
+			sizeint = 2
 			break
-		case "Big" :
-			size = 3
+		case "big" :
+			sizeint = 3
 			break
-		case "Huge" :
-			size = 4
+		case "huge" :
+			sizeint = 4
 			break
 	}
 	console.log(size);
 	var temp = {"actions":[]};
-	temp.actions = {"kind":"ad","location":{"latitude":latitude,"longitude":longitude},"radius":size}
+	temp.actions = {"kind":"ad","location":{"latitude":latitude,"longitude":longitude},"radius":sizeint}
+	console.log(JSON.stringify(temp))
 	$.ajax({
 			type: "POST",
 			url: domain+"/action/"+gameInfo["name"],
-			data: JSON.stringify(temp.actions),
+			data: JSON.stringify(temp),
 			contentType: 'application/json'
 		})
 })
