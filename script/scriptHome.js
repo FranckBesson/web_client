@@ -59,7 +59,7 @@ $("#order").click(function(){
 	{
 		$.ajax({
 			type: "POST",
-			url: domain+"/actions/"+name,
+			url: domain+"/actions/"+gameInfo.name,
 			data: JSON.stringify(toSend),
 			contentType: 'application/json'
 		})
