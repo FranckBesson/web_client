@@ -3,7 +3,7 @@ console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 
 function displayForecast(){
-  $.ajax('/forecast').done(function(data){
+  $.ajax('http://webserverlemonade.herokuapp.com/metrology').done(function(data){
   var jour0 = data.weather[0].dfn;
   var meteo0 = data.weather[0].weather;
   var meteo1 = data.weather[1].weather;
@@ -108,3 +108,7 @@ function displayForecast(){
   }
 })
 }
+
+$(function(){
+	displayForecast();
+})
