@@ -3,7 +3,7 @@ console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 var utilisateur = gameInfo.name;
 
-function dynamicBillboard(){
+function dynamicRecipetable(){
 	  $.ajax('http://webserverlemonade.herokuapp.com/map/'+utilisateur).done(function(data){
 		  var i = 0;
 		  while (data.playerInfo.drinksOffered[i] != ""){
@@ -25,6 +25,23 @@ function dynamicBillboard(){
 		})
 	}
 
+function getIngredientDropdown(){
+	$.ajax('http://webserverlemonade.herokuapp.com/ingredients').done(function(data){
+		var i = 1;
+		var ingredient =  data[0] ;
+		$("#selectingredient").html("<option>" +ingredient+ "</option>");
+
+
+		while (data[i] != ""){
+			var ingredient =  data[i] ;
+			$("#selectingredient").append("<option value=\"alcohol\">" +ingredient+ "</option>");
+			i++;
+
+		}
+	})
+}
+
 $(function(){
-	dynamicBillboard();
+	dynamicRecipetable();
+	getIngredientDropdown();
 })
