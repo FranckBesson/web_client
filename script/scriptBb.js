@@ -1,21 +1,18 @@
 var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
-
-var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
-console.log(gameInfo);
-var domain = "http://webserverlemonade.herokuapp.com";
+var utilisateur = gameInfo.name;
 
 function dynamicBillboard(){
-	  $.ajax('http://webserverlemonade.herokuapp.com/map').done(function(data){
+	  $.ajax('http://webserverlemonade.herokuapp.com/map/'+utilisateur).done(function(data){
 		  var i = 0;
 			var j = 0;
 		  $("#bbspawn").html("ta mere ");
-		  while (data.map.itemsbyplayer[i] != ""){
-				if(data.map.itemsbyplayer[i].kind == "ad"){
-					var latitude = data.map.itemsbyplayer[i].location.latitude ;
-				 	var longitude = data.map.itemsbyplayer[i].location.longitude ;
-				 	var taille = data.map.itemsbyplayer[i].influence;
+		  while (data.map.itemsByPlayer[utilisateur][i] != ""){
+				if(data.map.itemsByPlayer[utilisateur][i].kind == "AD"){
+					var latitude = data.map.itemsByPlayer[utilisateur][i].location.latitude ;
+				 	var longitude = data.map.itemsByPlayer[utilisateur][i].location.longitude ;
+				 	var taille = data.map.itemsByPlayer[utilisateur][i].influence;
 				 	if (taille < 30 && taille > 0) var size = "Small" ;
 					else if (taille >= 30 && taille < 50) var size = "Medium";
 					else if (taille >= 50 && taille < 80) var size = "Big" ;
