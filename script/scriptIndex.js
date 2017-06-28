@@ -6,6 +6,7 @@ $(".start").click(function(){
 	information = $(".id").val();
 	if(information == ""){
 		alert("Nom non valide!")
+		$(".loader").hide()
 	}
 	else{
 		data = {"name" : information};
