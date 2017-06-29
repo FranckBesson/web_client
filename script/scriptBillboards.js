@@ -5,8 +5,6 @@ $("#bbprice").text("10");
 refreshPage();
 
 $("#utilisateur").text(gameInfo["name"]);
-console.log(gameInfo["name"])
-console.log($("#bbsize").val());
 
 //Click on Buy button
 $("#buybillboard").click(function(){
@@ -29,16 +27,14 @@ $("#buybillboard").click(function(){
 			sizeint = 4
 			break
 	}
-	console.log(size);
 	var temp = {"actions":[]};
-	temp.actions.push({"kind":"ad","location":{"latitude":latitude,"longitude":longitude},"radius":sizeint})
-	console.log(JSON.stringify(temp))
+	temp.actions.push({"kind":"ad","location":{"latitude":latitude,"longitude":longitude},"radius":sizeint});
 	$.ajax({
 			type: "POST",
 			url: domain+"/actions/"+gameInfo["name"],
 			data: JSON.stringify(temp),
 			contentType: 'application/json'
-		})
+		});
 })
 
 function refreshPage(){
@@ -51,6 +47,7 @@ function refreshPage(){
 		localStorage.setItem("gameInfo",JSON.stringify(gameInfo));
 		$("#cash").text(gameInfo["info"]["cash"]);
 		setTimeout(refreshPage,2000);
+		updateTable(getMyStands());
 	})
 };
 
@@ -71,3 +68,31 @@ $("#bbsize").on('change',function(){
 			break
 	}
 })
+
+
+
+function getMyStands(){
+	myItems = gameInfo.map.itemsByPlayer[gameInfo.name];
+	console.log(myItems);
+	stands = []
+	for(i in myItems){
+		if(myItems[i].kind == "AD"){
+			
+			stands.push(myItems[i]);
+		}
+	}
+	
+	return stands;
+}
+
+
+function updateTable(stands){
+	$("#bbTable tr:not(:first)").remove();
+	for(i in stands){
+		var latitudeAd = stands[i].location.latitude;
+		var longitudeAd = stands[i].location.longitude;
+		var sizeAd = stands[i].influence;
+		var number = parseInt(i)+1
+		$("#bbTable tr:last").after("<tr><td>"+number+"</td><td>"+latitudeAd+"</td><td>"+longitudeAd+"</td><td>"+sizeAd+"</td></tr>");
+	}
+}
