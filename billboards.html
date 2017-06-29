@@ -10,13 +10,6 @@
 
 
   <body>
-    <!--div class="header">
-      <header>
-        Bienvenue, <span id="utilisateur"></span>
-        <a href="home.html">Home </a>
-        <a href="index.html">Log Out </a>
-      </header>
-    </div-->
 
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
@@ -50,10 +43,10 @@
           <h4>Buy billboards</h4><br>
 
           <div class="billboardform">
-            <label for="bblatitude">Latitude :</label>
-            <input type="float" id="bblatitude" name="bblatitude"><br>
-            <label for="bblongitude">Longitude :</label>
-            <input type="float" id="bblongitude" name="bblongitude"> <br><br>
+            <label for="bblatitude">Latitude :</label><br>
+            <input type="float" id="bblatitude" name="bblatitude" class="position"><br>
+            <label for="bblongitude">Longitude :</label><br>
+            <input type="float" id="bblongitude" name="bblongitude" class="position"> <br><br>
 
             <form class="size" action="map.html" method="post">
               <label for="bbsize">Size : </label>
@@ -64,43 +57,16 @@
                 <option id="huge" value="huge">Huge</option>
               </select>
             </form>
-            <p>Price : <span id="bbprice"></span> €<br>
-              My cash : <span id="cash"></span> €
-            </p>
-            <input type="Submit" value="Buy !" id="buybillboard"> <br>
+            <p><label class="bbpricelabel">Price :</label><span id="bbprice"></span>€<br>
+            <label class="bbcashlabel">My cash :</label><span id="cash"></span>€</p>
+            <input type="Submit" value="Buy !" id="buybillboard" class="btn btn-info"> <br>
           </div>
         </div>
       </div>
 
-    <!--div class="settingsbox">
-      <h4>Buy billboards</h4>
-
-      <div class="billboardform">
-        <label for="bblatitude">Latitude :</label>
-        <input type="float" id="bblatitude" name="bblatitude"><br><br>
-        <label for="bblongitude">Longitude :</label>
-        <input type="float" id="bblongitude" name="bblongitude"> <br><br>
-
-        <form class="size" action="map.html" method="post">
-          <label for="bbsize">Size : </label>
-          <select name="bbsize" id="bbsize">
-            <option id="small" value="small">Small</option>
-            <option id="medium" value="medium">Medium</option>
-            <option id="big" value="big">Big</option>
-            <option id="huge" value="huge">Huge</option>
-          </select>
-        </form>
-        <p>Price : <span id="bbprice"></span> euros <br>
-          My cash : <span id="cash">30</span> euros
-        </p>
-        <input type="Submit" value="Buy !" id="buybillboard"> <br>
-      </div>
-    </div-->
-
     <div class="panel panel-default">
       <div class="panel-body">
         <h4>My billboards</h4>
-        <!--p id="bbspawn"></p-->
         <table class="table table-bordered" id= "bbTable">
           <tr>
             <th>Number</th>
@@ -112,21 +78,6 @@
       </div>
     </div>
 
-    <!--div class="mybillboards">
-      <h4>My billboards</h4>
-      <p>
-        <span id="bb1">Number 1 :</span>
-          <ul>
-            <li>Position: <span id="bb1latitude">1.4534</span> / <span id="bb1longitude">2.43535</span></li>
-            <li>Size: <span id="bb1size">Big</span></li>
-        </ul>
-        <span id="bb2">Number 2 :</span>
-          <ul>
-            <li>Position: <span id="bb2latitude">3.44</span> / <span id="bb2longitude">4.35</span></li>
-            <li>Size: <span id="bb2size">Small</span></li>
-        </ul>
-      </p>
-    </div-->
 
     </section1>
     <script src="script/scriptBillboards.js"></script>
