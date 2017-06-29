@@ -43,7 +43,11 @@ function getIngredientDropdown(){
 }
 
 function addIngredient(){
-	$("#ingredientTable tr:last").after("<tr><td>"+$("#addIngredient").val()+"</td></tr>")
+	console.log("test");
+	$("#addIngredient").click(function(){
+			console.log("test");
+		$("#ingredientTable tr:last").after("<tr><td>"+$("#addIngredient").val()+"</td></tr>");
+	})
 }
 
 
@@ -55,6 +59,8 @@ function addIngredient(){
 })*/
 dynamicRecipetable();
 getIngredientDropdown();
+console.log("test");
+addIngredient();
 
 /*$(function(){
 
