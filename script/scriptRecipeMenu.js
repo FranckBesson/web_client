@@ -32,7 +32,7 @@ function getIngredientDropdown(){
 		$("#selectingredient").html("<option>" +ingredient+ "</option>");
 
 
-		while (data[i] != ""){
+		while (data[i] != null){
 			var ingredient =  data[i] ;
 			$("#selectingredient").append("<option value=\"alcohol\">" +ingredient+ "</option>");
 			i++;
