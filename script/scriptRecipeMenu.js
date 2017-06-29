@@ -2,6 +2,7 @@ var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 var utilisateur = gameInfo.name;
+var creation = true;
 
 function dynamicRecipetable(){
 	  $.ajax('http://webserverlemonade.herokuapp.com/map/'+utilisateur).done(function(data){
@@ -26,7 +27,7 @@ function dynamicRecipetable(){
 	}
 
 function getIngredientDropdown(){
-	$.ajax('http://webserverlemonade.herokuapp.com/ingredients').done(function(data){
+		$.ajax('http://webserverlemonade.herokuapp.com/ingredients').done(function(data){
 		var i = 1;
 		var ingredient =  data[0] ;
 		$("#selectingredient").html("<option>" +ingredient+ "</option>");
@@ -41,7 +42,20 @@ function getIngredientDropdown(){
 	})
 }
 
-$(function(){
-	dynamicRecipetable();
-	getIngredientDropdown();
-})
+function addIngredient(){
+	$("#ingredientTable tr:last").after("<tr><td>"+$("#addIngredient").val()+"</td></tr>")
+}
+
+
+/*$("#createbutton").click(function(){
+	if ($("#recipename").val() =! ""){
+		creation = true ;
+	} else alert("Veuillez renseigner un nom pour votre recette");
+
+})*/
+dynamicRecipetable();
+getIngredientDropdown();
+
+/*$(function(){
+
+})*/
