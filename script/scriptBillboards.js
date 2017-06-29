@@ -3,6 +3,29 @@ console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 $("#bbprice").text("10");
 refreshPage();
+$("#okOrder").dialog({
+	autoOpen: false,
+	modal: true,
+  	buttons: {
+    "Ok": function() {
+      $( this ).dialog( "close" );
+    }
+  }
+});
+$("#orderFail").dialog({
+	autoOpen: false,
+	modal: true,
+  	buttons: {
+    "Ok": function() {
+      $( this ).dialog( "close" );
+    }
+  }
+});
+
+
+
+
+
 
 $("#utilisateur").text(gameInfo["name"]);
 
@@ -34,6 +57,23 @@ $("#buybillboard").click(function(){
 			url: domain+"/actions/"+gameInfo["name"],
 			data: JSON.stringify(temp),
 			contentType: 'application/json'
+		}).done(function(e) {
+			$(".loader").hide();
+			console.log(e.sufficientFunds)
+			if(e.sufficientFunds == true){
+				$("#okOrder").dialog("open");
+			}
+			else
+			{
+				$("#orderFail").dialog("open");
+			}
+			//debugger;
+
+		})
+		.fail(function(e) {
+			$(".loader").hide();
+			console.log("Fail: "+e.response);
+			alert("Echec de connexion !");
 		});
 })
 
@@ -96,3 +136,6 @@ function updateTable(stands){
 		$("#bbTable tr:last").after("<tr><td>"+number+"</td><td>"+latitudeAd+"</td><td>"+longitudeAd+"</td><td>"+sizeAd+"</td></tr>");
 	}
 }
+
+
+
