@@ -59,26 +59,18 @@
                 <span>Select ingredient :</span>
                 <select name="selectingredient" id="selectingredient">
                 </select>
-                <input type="Submit" value="Add" id="addIngredient"> <br>
-              </form
-          </div><br>
+                <input onclick="addIngredient()" type="Submit" value="Add" id="addIngredient"> <br>
+              </form><br>
 
           <div class="recipeTable">
-            <table class="recipeTable table table-bordered">
+            <table id="ingredientTable" class="recipeTable table table-bordered">
               <tr>
                 <th>Ingredient</th>
-                <th>Production cost</th>
               </tr>
-              <tr>
-                <td>Lemon</td>
-                <td>1 €</td>
-              </tr>
-              <tr>
-                <td>Sugar</td>
-                <td>2 €</td>
-                </tr>
-              </table>
+            </table>
+            </p>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -141,7 +133,7 @@
     </div-->
 
     </section1>
-    <script src="script/scriptCreate.js"></script>
+    <!--script src="script/scriptCreate.js"></script-->
     <script src="script/scriptRecipeMenu.js"></script>
     <script src="./js/bootstrap.min.js"></script>
   </body>
