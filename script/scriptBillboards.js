@@ -22,11 +22,6 @@ $("#orderFail").dialog({
   }
 });
 
-
-
-
-
-
 $("#utilisateur").text(gameInfo["name"]);
 
 //Click on Buy button

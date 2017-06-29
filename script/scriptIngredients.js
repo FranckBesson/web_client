@@ -2,6 +2,15 @@ var gameInfo = JSON.parse(localStorage.getItem("gameInfo"));
 console.log(gameInfo);
 var domain = "http://webserverlemonade.herokuapp.com";
 refreshPage()
+$("#restricition").dialog({
+	autoOpen: true,
+	modal: true,
+  	buttons: {
+    "Ok": function() {
+      $( this ).dialog( "close" );
+    }
+  }
+});
 
 
 $(".name").text(gameInfo["name"]);
