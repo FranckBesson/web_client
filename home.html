@@ -34,34 +34,33 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <h4>Player informations</h4>
-        <p>Name : <i><span class="name"></span></i></p>
-        <p>Stand location : <i><span id="latitude"></span>, <span id="longitude">0</span></i></p>
-        <p>Cash available: <i><span id="cash"></span> euros</i></p>
-        <p>Number of sales: <i><span id="sales"></span> drinks</i></p>
-        <p>Profit made: <i><span id="profit"></span> euros</i></p>
-        <p> List of drinks: <i><span id="drinksOffered"></span></i></p>
+        <h4 class="boxtitle">Player informations</h4>
+        <p><b>Name : </b><i><span class="name"></span></i></p>
+        <p><b>Stand location : </b><i><span id="latitude"></span>, <span id="longitude">0</span></i></p>
+        <p><b>Cash available : </b><i><span id="cash"></span> euros</i></p>
+        <p><b>Number of sales : </b><i><span id="sales"></span> drinks</i></p>
+        <p><b>List of drinks : </b><i><span id="drinksOffered"></span>Lemonade</i></p>
       </div>
     </div>
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <h4>What's up today ?</h4>
+        <h4 class="boxtitle">What's up today ?</h4>
         <table class="table table-bordered" id= "mainTable">
           <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Unit Cost</th>
-            <th>Production Cost</th>
-            <th>Selling Price</th>
-            <th>Estimated income</th>
+            <th class="casesell">Name</th>
+            <th class="casesell">Quantity</th>
+            <th class="casesell">Unit Cost</th>
+            <th class="casesell">Production Cost</th>
+            <th class="casesell">Selling Price</th>
+            <th class="casesell">Estimated income</th>
           </tr>
         </table><br>
 
         <div class="buttons">
-          <input class="btn-danger" type="Submit" value="Clear" id="clearall">
-          <input class="btn-warning "type="Submit" value="Refresh" id="refresh" onClick="window.location.reloadœ()">
-          <input class="btn-success" type="Submit" value="Order" id="order">
+          <input class="home btn btn-danger" type="Submit" value="Clear" id="clearall">
+          <input class="home btn btn-warning" type="Submit" value="Refresh" id="refresh" onClick="window.location.reloadœ()">
+          <input class="home btn btn-success" type="Submit" value="Order" id="order">
           <div class="loader"></div>
         </div>
       </div>
@@ -69,15 +68,13 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <h4>Forecast</h4>
-        <p>Today</p>
-        <span id="todayForecast"></span>
-        <p>Tomorrow</p>
-        <span id="tmrForecast"></span>
-        <p><b>Day : </b></p>
-        <p><span id="day">0</span></p>
-        <p><b>Time : </b></p>
-        <p><span id="time">0:00</span></p>
+        <h4 class="boxtitle">Forecast</h4>
+        <p><b>Today :</b></p>
+        <span id="todayForecast"></span><br>
+        <p><b>Tomorrow :</b></p>
+        <span id="tmrForecast"></span><br><br>
+        <p><b>Day : </b><span id="day">0</span></p>
+        <p><b>Time : </b><span id="time">0:00</span></p>
       </div>
     </div>
 

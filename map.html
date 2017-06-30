@@ -31,52 +31,15 @@
 
     <section1 class="sectionUno">
 
-    <div class="settingsbox">
-      <h4>Buy billboards</h4>
-
-      <div class="billboardform">
-        <label for="bblatitude">Latitude :</label>
-        <input type="float" id="bblatitude" name="bblatitude"><br><br>
-        <label for="bblongitude">Longitude :</label>
-        <input type="float" id="bblongitude" name="bblongitude"> <br><br>
-
-        <form class="size" action="map.html" method="post">
-          <label for="bbsize">Size : </label>
-          <select name="bbsize" id="bbsize">
-            <option id="small" value="small">Small</option>
-            <option id="medium" value="medium">Medium</option>
-            <option id="big" value="big">Big</option>
-            <option id="huge" value="huge">Huge</option>
-          </select>
-        </form>
-        <p>Price : <span id="bbprice"></span> euros <br>
-          My cash : <span id="cash">30</span> euros
-        </p>
-        <input type="Submit" value="Buy !" id="buybillboard"> <br>
+    <div class="panel panel-default">
+        <div class="panel-body">
+          <h4 class="boxtitle">Player map :</h4><br>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16588.85036502192!2d2.8936105722751533!3d42.69266358253361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1498782701209" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
       </div>
 
-
-
-    </div>
-
-    <div class="mybillboards">
-      <h4>My billboards</h4>
-      <p>
-        <span id="bb1">Number 1 :</span>
-          <ul>
-            <li>Position : <span id="bb1latitude">1.4534</span> <span id="bb1longitude">2.43535</span></li>
-            <li>Size<span id="bb1size">Big</span></li>
-        </ul>
-        <span id="bb2">Number 2 :</span>
-          <ul>
-            <li>Position : <span id="bb2latitude">3.44</span> <span id="bb2longitude">4.35</span></li>
-            <li>Size<span id="bb2size">Small</span></li>
-        </ul>
-      </p>
-
-    </div>
     </section1>
-    <div id="restricition" title="Not Available!">
+    <div id="restricition" title="Coming soon!">
       <p>Features in development...</p>
     </div>
     <script src="script/scriptMap.js"></script>

@@ -55,6 +55,37 @@ body {
   font-weight: bold;
 }
 
+.casetable{
+  width: 70px;
+  height: 20px;
+  text-align: center;
+}
+
+.casesell{
+  text-align: center;
+}
+
+.boxtitle{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#day{
+  font-size: x-large;
+}
+
+.start{
+  width: 230px;
+}
+
+.home{
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+  width: 130px;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
 #bbprice{
   padding: 2px;
 }
